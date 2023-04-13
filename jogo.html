@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+</head>
+<body>
+    <script>
+        let nivel = prompt("Escolha o nível do jogo: (fácil, médio, difícil)");
+        let pontos = parseInt(prompt("Insira o número de pontos"));
+        let dificuldade;
+
+        switch (nivel) {
+            case "fácil":
+                dificuldade = 1;
+                break;
+            case "médio":
+                dificuldade = 2;
+                break;
+            case "difícil":
+                dificuldade = 3;
+                break;
+            default:
+                alert("Nível inválido!");
+        }
+
+        let pontosFinais = pontos*dificuldade
+
+        if(dificuldade) {
+            alert("Você está com " + pontosFinais + " pontos");
+        }
+    </script>
+</body>
+</html>
