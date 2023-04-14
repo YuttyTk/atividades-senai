@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+
+<body>
+
+    <main>
+
+        <h1>TABUADA</h1>
+        <h2>Este programa exibe a tabuabua de 1 a 10</h2>
+
+        <label>Digite um número</label>
+        <input id="input" type="text">
+        <button id="btn-submit" onclick="multiplicar()">Enviar</button>
+
+        <p id="text"></p>
+
+    </main>
+
+    <script>
+
+        /* Função que faz o cálculo da multiplicação e exibe na tela a tabuada */
+        function multiplicar() {
+
+            /* Buscando a tag p para inserir o texto */
+            let texto = document.getElementById("text");
+
+            /* Capturando o valor que o usuário vai digitar no input */
+            let fator = document.getElementById("input").value;
+
+            /* Variável que vai receber o que for pedido dentro do loop for */
+            let multiplicacao = "";
+
+            for (let multiplicador = 1; multiplicador <= 10; multiplicador++) {
+                /* No loop for, foi declarado que a variável multiplicador vai começar com o valor 1. O loop for vai ser repetido até o multiplicador for <= a 10. E depois vai ser incrementado + 1 no valor do multiplicador. */
+
+                /* Variável que faz o cálculo da multiplicação */
+                let produto = fator * multiplicador;
+
+                /* Aqui estou dizendo o que a variável produto vai fazer.  
+                -> fator: vai imprimir na tela o fator(que é o número que o usuário digitou)
+                -> " x ": vai imprimir na tela o " x " como string
+                -> multiplicador: vai imprimir na tela o valor do multiplicador
+                -> " = ": vai imprimir na tela o valor de " = " 
+                -> produto: vai imprimir na tela o resultado da multiplicação
+                -> "<br>": pular linha */
+                multiplicacao += fator + " x " + multiplicador + " = " + produto + "<br>";
+            }
+
+            /* Acrescenta um parágrafo imprimindo na tela cada operação feita pelo loop for */
+            texto.innerHTML = (multiplicacao);
+        }
+
+    </script>
+</body>
+
+</html>

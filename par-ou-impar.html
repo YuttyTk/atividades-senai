@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou ímpar</title>
+</head>
+
+<body>
+    <main>
+
+        <h1>Par ou ímpar</h1>
+        <h2>Este programa responde se o número digitado é par ou ímpar</h2>
+
+        <label>Digite um número</label>
+        <input id="input" type="text">
+        <button id="btn-submit" onclick="parOuImpar()">Enviar</button>
+
+        <p id="text"></p>
+
+    </main>
+
+    <script>
+
+        function parOuImpar() {
+
+            let numero = document.getElementById("input").value;
+            let mensagem = document.getElementById("text");
+
+            let contador = 1;
+
+            while (contador <= numero) {
+
+                if (contador % 2 == 0) {
+                    mensagem.innerHTML=("O número digitado é par!");
+                } else if(contador % 2 !== 0) {
+                    mensagem.innerHTML=("O número digitado é ímpar!");
+                }
+
+                contador++;
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
