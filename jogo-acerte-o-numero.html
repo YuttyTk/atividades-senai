@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo tente acertar o número sorteado</title>
+</head>
+
+<body>
+    <script>
+        /* Esta função traz um número aleatório entre 1 e 100 */
+        function sorteia() {
+            return Math.round(Math.random() * 100);
+        }
+
+        let numeroAleatorio = sorteia();
+
+        /* Inicializa o número que o jogador vai colocar */
+        let numero;
+
+        /* Inicia a contagem de tentativas */
+        let tentativas = 0;
+
+        do {
+            /* Condição caso o número seja menor que 1 e maior que 100 alerta inválido */
+            if (numero < 1 || numero > 100) {
+                alert("Número inválido!");
+            }
+
+            /* Pedindo o número para o jogador */
+            alert("Tente acertar o número sorteado!");
+            numero = parseInt(prompt("Digite um número entre 1 a 100"));
+
+            /* Incrementa a contagem de tentativas */
+            tentativas++;
+
+            /* Condição no qual o número está certo */
+            if (numero == numeroAleatorio) {
+                alert("Você acertou!");
+                alert("Quantidade de tentativas: " + tentativas);
+            } else if (numeroAleatorio < numero) {
+                /* Alerta o jogador que o número que ele colocou é maior que o número sorteado */
+                alert("O número é maior que o número sorteado!");
+            } else {
+                /* Alerta o jogador que o número que ele colocou é menor que o número sorteado */
+                alert("O número é menor que o número sorteado!");
+            }
+            /* Repete as condições até que o número que o jogador colocou seja igual ao número sorteado */
+        } while (numero != numeroAleatorio);
+
+    </script>
+</body>
+
+</html>
