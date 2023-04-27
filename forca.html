@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da forca</title>
+</head>
+
+<body>
+    <script>
+
+        
+let palavraSecreta = prompt("Digite a palavra secreta: ").toUpperCase();
+        let tamanhoPalavra = palavraSecreta.length;
+        let letrasJaChutadas = "";
+        let letrasErradas = "";
+        let letrasAcertadas = "";
+
+        for (let i = 0; i < tamanhoPalavra; i++) {
+            letrasAcertadas += "_";
+        }
+
+        let tentativas = 0;
+        let maxTentativas = 6;
+
+        while (tentativas < maxTentativas) {
+            //Loop que executa enquanto o usuário não ultrapassa o número máximo de tentativas.
+            let letraChutada = prompt(`Palavras: ${letrasAcertadas}\nTentativas: ${tentativas}\nLetras já chutadas: ${letrasJaChutadas}\nLetras erradas: ${letrasErradas}\nDigite uma letra: `).toUpperCase();
+            // Solicita que o usuário digite uma letra e armazene-a em uma variável,
+            // exibindo informações sobre as tentativas e letras já chutadas.
+
+            if (letrasJaChutadas.includes(letraChutada) ||
+                letrasAcertadas.includes(letraChutada) ||
+                letrasErradas.includes(letraChutada)) {
+                // Verifica se a letra já foi chutada anteriormente.
+                alert("Você já tentou essa letra! Tente outra.");
+                continue; // Retorna ao início do loop para que o usuário tente uma nova letra.
+            }
+
+            if (palavraSecreta.includes(letraChutada)) {
+                // Verifica se a letra chutada está presente na palavra secreta
+                for (let i = 0; i < tamanhoPalavra; i++) {
+                    // Loop que percorre cada letra da palavra secreta.
+
+                    if (palavraSecreta[i] === letraChutada) {
+                        // Verifica se a letra chutada está presente na palavra secreta.
+                        letrasAcertadas = letrasAcertadas.substr(0, i) + letraChutada + letrasAcertadas.substr(i + 1);
+                        // Substitui o underscore pela letra acertada na posição correspondente.
+                    }
+                }
+
+                if (letrasAcertadas === palavraSecreta) {
+                        // Verifica se todas as letras foram acertadas.
+                        alert(`Parabéns! Você acertou a palavra secreta "${palavraSecreta}" com ${tentativas + 1} tentativas.`);
+                        // Exibe uma mensagem de parabéns e o número de tentativas feitas pelo usuário.
+                        break; // Finaliza o loop.
+                    } else { // Caso a letra chutada não esteja presente na palavra secreta.
+                        letrasErradas += tentativas++; // Incrementa o número de tentativas.
+
+                        if (tentativas === maxTentativas) {
+                            // Verifica se o número máximo de tentativas foi alcançado.
+                            alert(`Game Over! A palavra secreta era "${palavraSecreta}".`);
+                            // Exibe uma mensagem informando que o jogo acabou e qual era a palavra secreta.
+                        }
+                    }
+            }
+
+            letrasJaChutadas += letraChutada + " ";
+            // Adiciona a letra chutada à string de letras já chutadas.
+
+        }
+
+    </script>
+</body>
+
+</html>
