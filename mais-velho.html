@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoa mais velha
+
+    </title>
+</head>
+
+<body>
+    <script>
+        let nomeMaisVelho;
+        let idadeMaisVelho = -Infinity;
+
+        // Inicia com um
+        //valor baixo para garantir que o primeiro valor digitado
+        //será maior
+
+        for (let i = 0; i < 5; i++) {
+            let nome = prompt("Digite o nome da " + (i + 1) + "ª pessoa:");
+
+            let idade = parseInt(prompt("Digite a idade da" + (i + 1) + "ª pessoa:"));
+
+
+
+            if (idade > idadeMaisVelho) {
+                idadeMaisVelho = idade;
+                nomeMaisVelho = nome;
+            }
+        }
+        alert("A pessoa mais velha é: " + nomeMaisVelho);
+    </script>
+</body>
+
+</html>

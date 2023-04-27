@@ -19,12 +19,19 @@
 
         /* const mensagem = document.getElementById("text"); */
 
-        function numeroAleatorio() {
-            return Math.round(Math.random() * 100);
-        }
+        let soma = 0;
+        let media = 0;
 
-        for (let i = 0; i < 10; i++) {
-            document.write(numeroAleatorio() + "<br>");
+        function numeroAleatorio() {
+            for (let i = 0; i < 10; i++) {
+                let num = Math.round(Math.random() * 100) + 1;
+                soma = soma + num;
+                document.write(num + "<br>");
+            }
+
+            media = soma / 10;
+
+            document.write("Média: " + media);
         }
 
     </script>
