@@ -1,0 +1,1 @@
+Este programa exibi uma carta aleatória ao clicar no botão.
