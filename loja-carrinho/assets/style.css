@@ -1,0 +1,71 @@
+body, main , img, div {
+    font-family: 'Lato';
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: brown;
+    font-weight: 400;
+    text-align: center;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: black;
+    font-weight: 400;
+    text-align: center;
+}
+
+.products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.product-content {
+    width: 20%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+}
+
+.product-content img {
+    height: auto;
+    width: 80%;
+}
+
+figcaption {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+}
+
+figcaption span {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+#price {
+    font-weight: 700;
+}
+
+#btn-purchase {
+    background-color: brown;
+    border: none;
+    color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 90%;
+}
+
+#btn-purchase:hover {
+    transform: scale(1.1);
+    transition: 400ms;
+}
