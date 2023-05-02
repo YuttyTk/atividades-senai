@@ -56,6 +56,12 @@ figcaption span {
     font-weight: 700;
 }
 
+#QNTD {
+    margin-top: 0.5rem;
+    width: 40%;
+    text-align: center;
+}
+
 #btn-purchase {
     background-color: brown;
     border: none;
